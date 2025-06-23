@@ -1,23 +1,33 @@
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #7605b4 50%, #f310cd 50%);
-    display: flex;
+    background-image: url("https://steamuserimages-a.akamaihd.net/ugc/1817771981441604936/5D1EBEBBCDC775D0D5B392CBF61955EB1B83042E/?imw=512&amp;imh=288&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=true");
+    background-repeat: no-repeat; /* Agar GIF takrorlanishini xohlamasangiz */
+    background-size: cover;       /* Orqa fon butun sahifani qoplashini ta'minlash */
+    background-attachment: fixed; /* Orqa fon varaqlash paytida joyida qolishini ta'minlash (ixtiyoriy) */
+
+
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
     color: #333;
+    font-size: 14px;
 }
 
 .business-card {
-    width: 350px;
-    background: rgb(3, 230, 255);
+    width: 250px;
+    padding: 15px;
+    margin: 0 auto;
+    margin-top: 100px;
+    display: block;
+    background: transparent !important;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     padding: 30px;
     text-align: center;
     position: relative;
     overflow: hidden;
+    font-size: 18px;
 }
 
 .profile-pic {
