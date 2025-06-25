@@ -1,166 +1,151 @@
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-image: url("https://steamuserimages-a.akamaihd.net/ugc/1817771981441604936/5D1EBEBBCDC775D0D5B392CBF61955EB1B83042E/?imw=512&amp;imh=288&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=true");
-    background-repeat: no-repeat; /* Agar GIF takrorlanishini xohlamasangiz */
-    background-size: cover;       /* Orqa fon butun sahifani qoplashini ta'minlash */
-    background-attachment: fixed; /* Orqa fon varaqlash paytida joyida qolishini ta'minlash (ixtiyoriy) */
-
-
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    color: #333;
-    font-size: 14px;
+    overflow: hidden;
+    color: white;
+}
+
+
+#bg-video {
+    position: fixed;
+    right: 5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height:auto;
+    z-index: -1;
+    filter: brightness(0.7);
 }
 
 .business-card {
-    width: 250px;
-    padding: 15px;
-    margin: 0 auto;
-    margin-top: 100px;
-    display: block;
-    background: transparent !important;
+    //background-color: rgba(255, 255, 255, 0);//
+    //backdrop-filter: blur(10px);//
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0);
+    width: 350px;
     padding: 30px;
     text-align: center;
     position: relative;
     overflow: hidden;
-    font-size: 18px;
+    border: 1px solid rgba(255, 255, 255, 0);
+    background: none;
 }
 
-.profile-pic {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #0fcf3c;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+.profile {
     margin-bottom: 20px;
 }
 
-h1 {
-    margin: 0;
-    color: #2c3e50;
+.name {
     font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .title {
-    color: #7f8c8d;
-    margin: 10px 0 20px;
     font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .contact-info {
-    margin: 25px 0;
+    margin-bottom: 25px;
 }
 
-.contact-item {
+.phone {
+    font-size: 18px;
+    margin-bottom: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 15px 0;
-    font-size: 16px;
-}
-
-.contact-item i {
-    margin-right: 10px;
-    font-size: 20px;
+    gap: 10px;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .social-links {
     display: flex;
-    justify-content: center;
-    margin-top: 30px;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.social-link {
+.telegram-link, .group-link {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin: 0 10px;
-    color: white;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 8px;
     text-decoration: none;
-    font-size: 24px;
+    font-weight: 500;
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.telegram {
-    background: #0088cc;
+.telegram-link {
+    background-color: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.instagram {
-    background: #e1306c;
+.group-link {
+    background-color: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.telegram:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 136, 204, 0.3);
+.telegram-link:hover, .group-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 136, 204, 0.9);
 }
 
-.instagram:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(225, 48, 108, 0.3);
+.group-link:hover {
+    background-color: rgba(46, 204, 113, 0.9);
 }
-
-/* Telegram animatsiya */
-.telegram-animation {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+.channel-link {
+    background-color: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    color: white;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.telegram-animation i {
-    animation: pulse 2s infinite;
+.channel-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 165, 0, 0.9); /* Yangi rang (orange) */
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
     }
     50% {
-        transform: scale(1.2);
-    }
-    100% {
-        transform: scale(1);
+        transform: translateY(-10px);
     }
 }
 
-/* Instagram animatsiya */
-.instagram-gradient {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-    background-size: 400% 400%;
-    animation: gradient 4s ease infinite;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.instagram:hover .instagram-gradient {
-    opacity: 1;
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+.telegram-icon, .group-icon {
+    transition: all 0.3s ease;
 }
