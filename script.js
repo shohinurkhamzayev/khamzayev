@@ -1,9 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    
-    console.log('Vizitka yuklandi!');
-    
-    
-    const phoneNumber = document.querySelector('.contact-item span');
+   const phoneNumber = document.querySelector('.contact-item span');
     if (phoneNumber) {
         phoneNumber.addEventListener('click', function() {
             const text = this.innerText;
@@ -16,16 +12,52 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    const telegramIcon = document.querySelector('.telegram-icon');
+    const groupIcon = document.querySelector('.group-icon');
     
-    
-    const socialLinks = document.querySelectorAll('.social-link');
-    socialLinks.forEach(link => {
-        link.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.1)';
-        });
+   
+    document.querySelector('.telegram-link').addEventListener('click', function(e) {
+       
+        telegramIcon.style.animation = 'bounce 0.5s ease';
+        setTimeout(() => {
+            telegramIcon.style.animation = '';
+        }, 500);
         
-        link.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1)';
-        });
+       
+        e.preventDefault();
+        setTimeout(() => {
+            window.open(this.href, '_blank');
+        }, 300);
     });
+    
+   
+    document.querySelector('.group-link').addEventListener('click', function(e) {
+        
+        groupIcon.style.animation = 'bounce 0.5s ease';
+        setTimeout(() => {
+            groupIcon.style.animation = '';
+        }, 500);
+        
+       
+        e.preventDefault();
+        setTimeout(() => {
+            window.open(this.href, '_blank');
+        }, 300);
+    });
+});
+const channelIcon = document.querySelector('.channel-icon');
+
+document.querySelector('.channel-link').addEventListener('click', function(e) {
+    
+    channelIcon.style.animation = 'bounce 0.5s ease';
+    setTimeout(() => {
+        channelIcon.style.animation = '';
+    }, 500);
+
+    
+    e.preventDefault();
+    setTimeout(() => {
+        window.open(this.href, '_blank');
+    }, 300);
 });
