@@ -135,7 +135,7 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     background-color: rgba(255, 165, 0, 0.9); /* Yangi rang (orange) */
 }
-.whatsapp-btn {
+//.whatsapp-btn {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -155,7 +155,7 @@ body {
 .whatsapp-btn:hover {
     background-color: #1ebe5d;
     transform: scale(1.05);
-}
+}//
 
 
 @keyframes bounce {
