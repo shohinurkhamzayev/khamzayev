@@ -149,3 +149,32 @@ body {
 .telegram-icon, .group-icon {
     transition: all 0.3s ease;
 }
+.whatsapp-link, .whatsappb-link {
+    background-color: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    color: white;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+.whatsapp-link:hover {
+    transform: translateY(-3px);
+    background-color: rgba(37, 211, 102, 0.9); /* yashil */
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+}
+
+
+.whatsappb-link:hover {
+    transform: translateY(-3px);
+    background-color: rgba(0, 168, 132, 0.9); /* to‘qroq yashil */
+    box-shadow: 0 5px 15px rgba(0, 168, 132, 0.4);
+}
