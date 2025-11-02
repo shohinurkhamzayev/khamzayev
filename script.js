@@ -61,3 +61,18 @@ document.querySelector('.channel-link').addEventListener('click', function(e) {
         window.open(this.href, '_blank');
     }, 300);
 });
+const whatsappIcon = document.querySelector('.whatsapp-icon');
+document.querySelector('.whatsapp-link').addEventListener('click', function(e) {
+    whatsappIcon.style.animation = 'bounce 0.5s ease';
+    setTimeout(() => { whatsappIcon.style.animation = ''; }, 500);
+    e.preventDefault();
+    setTimeout(() => { window.open(this.href, '_blank'); }, 300);
+});
+
+const whatsappbIcon = document.querySelector('.whatsappb-icon');
+document.querySelector('.whatsappb-link').addEventListener('click', function(e) {
+    whatsappbIcon.style.animation = 'bounce 0.5s ease';
+    setTimeout(() => { whatsappbIcon.style.animation = ''; }, 500);
+    e.preventDefault();
+    setTimeout(() => { window.open(this.href, '_blank'); }, 300);
+});
