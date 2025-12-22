@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shohinur Hamzayev | Vizitka</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f172a;
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        /* Custom scrollbar for game lists */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4f46e5; 
+            border-radius: 3px;
+        }
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #4f46e5, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+        .btn-hover:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-slate-900 p-4">
+    <!-- Main Container -->
+    <div class="relative w-full max-w-md min-h-[600px] bg-slate-800 rounded-3xl shadow-2xl overflow-hidden border border-slate-700 flex flex-col">
+        
+        <!-- Background Decorations -->
+        <div class="absolute top-0 left-0 w-full h-40 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-b-[50%] opacity-20 blur-xl"></div>
+        <div class="absolute bottom-10 right-10 w-32 h-32 bg-pink-600 rounded-full opacity-10 blur-2xl"></div>
+        <!-- Language Switcher (Fixed Top) -->
+        <div class="absolute top-4 right-4 z-50">
+            <div class="flex bg-slate-900/80 rounded-full p-1 border border-slate-700 backdrop-blur-sm">
+                <button onclick="setLanguage('uz')" id="btn-uz" class="px-3 py-1 text-xs font-bold rounded-full bg-indigo-600 text-white transition-all">UZ</button>
+                <button onclick="setLanguage('ru')" id="btn-ru" class="px-3 py-1 text-xs font-bold rounded-full text-slate-400 hover:text-white transition-all">RU</button>
+            </div>
+        </div>
+        <!-- CONTENT AREA -->
+        <div id="content-area" class="relative z-10 flex-1 flex flex-col p-6 overflow-y-auto max-h-[85vh]">
+            
+            <!-- 1. HOME PAGE -->
+            <div id="page-home" class="flex flex-col items-center w-full h-full fade-in">
+                
+                <!-- Avatar / Logo -->
+                <div class="mt-8 mb-4 relative">
+                    <div class="w-32 h-32 rounded-full bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 p-1">
+                        <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center overflow-hidden">
+                            <!-- Placeholder User Icon or Image -->
+                            <i class="fa-solid fa-user-astronaut text-5xl text-indigo-400"></i>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-1 right-1 bg-green-500 w-6 h-6 rounded-full border-4 border-slate-800"></div>
+                </div>
+                <!-- Name -->
+                <h1 id="user-name" class="text-2xl font-bold text-white mb-2 text-center">Shohinur Hamzayev</h1>
+                
+                <!-- Status Tags -->
+                <div class="flex flex-wrap justify-center gap-2 mb-6">
+                    <span id="tag-student" class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-medium border border-blue-500/30">Talaba</span>
+                    <span id="tag-it" class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs font-medium border border-purple-500/30">IT Yo'nalishi</span>
+                    <span id="tag-gamer" class="px-3 py-1 rounded-full bg-green-500/20 text-green-300 text-xs font-medium border border-green-500/30">Gamer</span>
+                </div>
+                <!-- Education Card -->
+                <div class="w-full glass-card rounded-xl p-4 mb-6">
+                    <h3 id="edu-title" class="text-sm uppercase tracking-wider text-slate-400 font-semibold mb-3 border-b border-slate-700 pb-2">Ta'lim</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-slate-400"><i class="fa-solid fa-building-columns mr-2"></i><span id="lbl-college">Kollej</span></span>
+                            <span class="text-white font-medium text-right">IT Professional College</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-400"><i classSankt-peterburg="fa-solid fa-location-dot mr-2"></i><span id="lbl-city">Shahar</span></span>
+                            <span class="text-white font-medium">Sankt-peterburg</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-400"><i class="fa-solid fa-code mr-2"></i><span id="lbl-direction">Yo'nalish</span></span>
+                            <span class="text-white font-medium">Software Engineering</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-400"><i class="fa-solid fa-graduation-cap mr-2"></i><span id="lbl-course">Kurs</span></span>
+                            <span class="text-white font-medium">3-kurs</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation Buttons -->
+                <div class="w-full grid grid-cols-2 gap-3 mb-4">
+                    <button onclick="navigate('gaming')" class="btn-hover glass-card p-4 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-slate-700/50 group">
+                        <i class="fa-solid fa-gamepad text-2xl text-pink-500 group-hover:scale-110 transition-transform"></i>
+                        <span id="btn-gaming-txt" class="font-medium">Gaming</span>
+                    </button>
+                    <button onclick="navigate('socials')" class="btn-hover glass-card p-4 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-slate-700/50 group">
+                        <i class="fa-solid fa-globe text-2xl text-blue-400 group-hover:scale-110 transition-transform"></i>
+                        <span id="btn-socials-txt" class="font-medium">Ijtimoiy</span>
+                    </button>
+                </div>
+                <!-- Call Button -->
+                <a href="tel:+998901234567" class="w-full btn-hover bg-gradient-to-r from-indigo-600 to-purple-600 p-4 rounded-xl flex items-center justify-center gap-3 shadow-lg shadow-indigo-500/20">
+                    <i class="fa-solid fa-phone-volume text-xl animate-pulse"></i>
+                    <span id="btn-contact-txt" class="font-bold text-lg">Bog'lanish</span>
+                </a>
+            </div>
+            <!-- 2. GAMING PAGE -->
+            <div id="page-gaming" class="hidden flex-col w-full min-h-full">
+                <!-- Header -->
+                <div class="flex items-center mb-6">
+                    <button onclick="navigate('home')" class="p-2 rounded-full hover:bg-slate-700 transition-colors mr-4">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                        </button>
+                    <h2 class="text-2xl font-bold gradient-text">Gaming</h2>
+                </div>
+                <!-- Games List -->
+                <div class="space-y-4 pb-4">
+                    
+                    <!-- Game Item Template -->
+                    <div class="glass-card p-4 rounded-xl border-l-4 border-yellow-500">
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-crosshairs text-yellow-500"></i>
+                                <h3 class="font-bold text-lg">PUBG Mobile</h3>
+                            </div>
+                        </div>
+                        <div class="bg-slate-900/50 p-2 rounded-lg mb-2 flex justify-between items-center">
+                            <span class="text-xs text-slate-400">ID:</span>
+                            <span class="font-mono text-indigo-300 select-all">51787188360</span>
+                        </div>
+                        <p id="txt-play-pubg" class="text-xs text-slate-400 italic">"Birga o'ynash uchun ID orqali qidiring"</p>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl border-l-4 border-orange-500">
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-gun text-orange-500"></i>
+                                <h3 class="font-bold text-lg">Counter-Strike 2</h3>
+                            </div>
+                        </div>
+                        <div class="bg-slate-900/50 p-2 rounded-lg mb-2 flex justify-between items-center">
+                            <span class="text-xs text-slate-400">Steam Friend Code:</span>
+                            <span class="font-mono text-indigo-300 select-all">1487550917</span>
+                        </div>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl border-l-4 border-green-600">
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-skull text-green-600"></i>
+                                <h3 class="font-bold text-lg">Call of Duty: Mobile</h3>
+                            </div>
+                        </div>
+                        <div class="bg-slate-900/50 p-2 rounded-lg mb-2 flex justify-between items-center">
+                            <span class="text-xs text-slate-400">UID:</span>
+                            <span class="font-mono text-indigo-300 select-all">7281177723002355713</span>
+                        </div>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl border-l-4 border-blue-400">
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-mobile-screen text-blue-400"></i>
+                                <h3 class="font-bold text-lg">Mobile Legends</h3>
+                            </div>
+                        </div>
+                        <div class="bg-slate-900/50 p-2 rounded-lg mb-2 flex justify-between items-center">
+                            <span class="text-xs text-slate-400">ID (Server):</span>
+                            <span class="font-mono text-indigo-300 select-all">1808525035 (6906)</span>
+                        </div>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl border-l-4 border-purple-400">
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-star text-purple-400"></i>
+                                <h3 class="font-bold text-lg">Genshin Impact</h3>
+                            </div>
+                            </div>
+                        <div class="bg-slate-900/50 p-2 rounded-lg mb-2 flex justify-between items-center">
+                            <span class="text-xs text-slate-400">UID:</span>
+                            <span class="font-mono text-indigo-300 select-all">784037175</span>
+                        </div>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl border-l-4 border-red-500">
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-shield-halved text-red-500"></i>
+                                <h3 class="font-bold text-lg">Standoff 2</h3>
+                            </div>
+                        </div>
+                        <div class="bg-slate-900/50 p-2 rounded-lg mb-2 flex justify-between items-center">
+                            <span class="text-xs text-slate-400">ID:</span>
+                            <span class="font-mono text-indigo-300 select-all">-</span>
+                        </div>
+                    </div>
+                    <div class="glass-card p-4 rounded-xl border-l-4 border-gray-400">
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-cube text-gray-400"></i>
+                                <h3 class="font-bold text-lg">Roblox</h3>
+                            </div>
+                        </div>
+                        <div class="bg-slate-900/50 p-2 rounded-lg mb-2 flex justify-between items-center">
+                            <span class="text-xs text-slate-400">User:</span>
+                            <span class="font-mono text-indigo-300 select-all">Shohinur_X</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 3. SOCIALS PAGE -->
+            <div id="page-socials" class="hidden flex-col w-full min-h-full">
+                <!-- Header -->
+                <div class="flex items-center mb-6">
+                    <button onclick="navigate('home')" class="p-2 rounded-full hover:bg-slate-700 transition-colors mr-4">
+                        <i class="fa-solid fa-arrow-left text-xl"></i>
+                    </button>
+                    <h2 id="socials-title" class="text-2xl font-bold gradient-text">Ijtimoiy Tarmoqlar</h2>
+                </div>
+                <!-- Social Grid -->
+                <div class="grid grid-cols-1 gap-3 pb-4">
+                    
+                    <a href="https://t.me/shoh1nur_khamzayev" target="_blank" class="glass-card p-3 rounded-xl flex items-center gap-4 hover:bg-slate-700/50 transition-colors group">
+                        <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white">
+                            <i class="fa-brands fa-telegram text-xl"></i>
+                        </div>
+                        <span class="font-medium text-lg">Telegram</span>
+                        <i class="fa-solid fa-chevron-right ml-auto text-slate-500 group-hover:text-white"></i>
+                    </a>
+                    <a href="https://instagram.com/_shohinur_khamzayev_" target="_blank" class="glass-card p-3 rounded-xl flex items-center gap-4 hover:bg-slate-700/50 transition-colors group">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 flex items-center justify-center text-white">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </div>
+                        <span class="font-medium text-lg">Instagram</span>
+                        <i class="fa-solid fa-chevron-right ml-auto text-slate-500 group-hover:text-white"></i>
+                    </a>
+                    <a href="https://tiktok.com/@k1jeko" target="_blank" class="glass-card p-3 rounded-xl flex items-center gap-4 hover:bg-slate-700/50 transition-colors group">
+                        <div class="w-10 h-10 rounded-full bg-black border border-slate-600 flex items-center justify-center text-white">
+                            <i class="fa-brands fa-tiktok text-xl"></i>
+                        </div>
+                        <span class="font-medium text-lg">TikTok</span>
+                        <i class="fa-solid fa-chevron-right ml-auto text-slate-500 group-hover:text-white"></i>
+                    </a>
+                    <a href="https://github.com/shohinurkhamzayev" target="_blank" class="glass-card p-3 rounded-xl flex items-center gap-4 hover:bg-slate-700/50 transition-colors group">
+                        <div class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-white">
+                            <i class="fa-brands fa-github text-xl"></i>
+                        </div>
+                        <span class="font-medium text-lg">GitHub</span>
+                        <i class="fa-solid fa-chevron-right ml-auto text-slate-500 group-hover:text-white"></i>
+                    </a>
+                    <a href="https://vk.com/id892437625" target="_blank" class="glass-card p-3 rounded-xl flex items-center gap-4 hover:bg-slate-700/50 transition-colors group">
+                        <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            <i class="fa-brands fa-vk text-xl"></i>
+                        </div>
+                        <span class="font-medium text-lg">VK</span>
+                        <i class="fa-solid fa-chevron-right ml-auto text-slate-500 group-hover:text-white"></i>
+                    </a>
+                    <a href="https://ok.ru/profile/910268857957" target="_blank" class="glass-card p-3 rounded-xl flex items-center gap-4 hover:bg-slate-700/50 transition-colors group">
+                        <div class="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center text-white">
+                            <i class="fa-brands fa-odnoklassniki text-xl"></i>
+                        </div>
+                        <span class="font-medium text-lg">OK</span>
+                        <i class="fa-solid fa-chevron-right ml-auto text-slate-500 group-hover:text-white"></i>
+                    </a>
+                    <a href="https://wa.me/79650062154" target="_blank" class="glass-card p-3 rounded-xl flex items-center gap-4 hover:bg-slate-700/50 transition-colors group">
+                        <div class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center text-white">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                        </div>
+                        <span class="font-medium text-lg">WhatsApp</span>
+                        <i class="fa-solid fa-chevron-right ml-auto text-slate-500 group-hover:text-white"></i>
+                    </a>
+                    <a href="https://steamcommunity.com/profiles/76561199447816645" target="_blank" class="glass-card p-3 rounded-xl flex items-center gap-4 hover:bg-slate-700/50 transition-colors group">
+                        <div class="w-10 h-10 rounded-full bg-blue-900 flex items-center justify-center text-white">
+                            <i class="fa-brands fa-steam text-xl"></i>
+                        </div>
+                        <span class="font-medium text-lg">Steam</span>
+                        <i class="fa-solid fa-chevron-right ml-auto text-slate-500 group-hover:text-white"></i>
+                    </a>
+                    <a href="https://discord.gg/MAnDHpXp" target="_blank" class="glass-card p-3 rounded-xl flex items-center gap-4 hover:bg-slate-700/50 transition-colors group">
+                        <div class="w-10 h-10 rounded-full bg-indigo-500 flex items-center justify-center text-white">
+                            <i class="fa-brands fa-discord text-xl"></i>
+                        </div>
+                        <span class="font-medium text-lg">Discord</span>
+                        <i class="fa-solid fa-chevron-right ml-auto text-slate-500 group-hover:text-white"></i>
+                    </a>
+                    <a href="#" target="_blank" class="glass-card p-3 rounded-xl flex items-center gap-4 hover:bg-slate-700/50 transition-colors group">
+                        <div class="w-10 h-10 rounded-full bg-blue-400 flex items-center justify-center text-white">
+                            <span class="font-bold text-xs">IMO</span>
+                        </div>
+                        <span class="font-medium text-lg">IMO</span>
+                        <i class="fa-solid fa-chevron-right ml-auto text-slate-500 group-hover:text-white"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Language Data
+        const translations = {
+            uz: {
+                name: "Shohinur Xamzayev",
+                status_student: "Talaba",
+                status_it: "IT Yo'nalishi",
+                status_gamer: "Gamer",
+                edu_title: "Ta'lim",
+                lbl_college: "Kollej",
+                lbl_city: "Shahar",
+                lbl_direction: "Yo'nalish",
+                lbl_course: "Kurs",
+                btn_gaming: "Gaming",
+                btn_socials: "Ijtimoiy",
+                btn_contact: "Bog'lanish",
+                socials_title: "Ijtimoiy Tarmoqlar",
+                play_with_me: "\"Men bilan o'ynash uchun...\""
+            },
+            ru: {
+                name: "Шохинур Хамзаев",
+                status_student: "Студент",
+                status_it: "IT Направление",
+                status_gamer: "Геймер",
+                edu_title: "Образование",
+                lbl_college: "Колледж",
+                lbl_city: "Город",
+                lbl_direction: "Направление",
+                lbl_course: "Курс",
+                btn_gaming: "Гейминг",
+                btn_socials: "Соцсети",
+                btn_contact: "Позвонить",
+                socials_title: "Социальные сети",
+                play_with_me: "\"Чтобы играть со мной...\""
+            }
+        };
+        // Navigation Logic
+        function navigate(pageId) {
+            // Hide all pages
+            document.getElementById('page-home').classList.add('hidden');
+            document.getElementById('page-home').classList.remove('flex', 'fade-in');
+            
+            document.getElementById('page-gaming').classList.add('hidden');
+            document.getElementById('page-gaming').classList.remove('flex', 'fade-in');
+            
+            document.getElementById('page-socials').classList.add('hidden');
+            document.getElementById('page-socials').classList.remove('flex', 'fade-in');
+            // Show target page
+            const target = document.getElementById(page-${pageId});
+            target.classList.remove('hidden');
+            target.classList.add('flex', 'fade-in');
+            
+            // Scroll to top
+            document.getElementById('content-area').scrollTop = 0;
+        }
+        // Language Logic
+        function setLanguage(lang) {
+            const data = translations[lang];
+            
+            // Update Buttons State
+            if (lang === 'uz') {
+                document.getElementById('btn-uz').classList.replace('text-slate-400', 'text-white');
+                document.getElementById('btn-uz').classList.add('bg-indigo-600');
+                document.getElementById('btn-ru').classList.replace('text-white', 'text-slate-400');
+                document.getElementById('btn-ru').classList.remove('bg-indigo-600');
+            } else {
+                document.getElementById('btn-ru').classList.replace('text-slate-400', 'text-white');
+                document.getElementById('btn-ru').classList.add('bg-indigo-600');
+                document.getElementById('btn-uz').classList.replace('text-white', 'text-slate-400');
+                document.getElementById('btn-uz').classList.remove('bg-indigo-600');
+            }
+            // Update Content
+            document.getElementById('user-name').textContent = data.name;
+            document.getElementById('tag-student').textContent = data.status_student;
+            document.getElementById('tag-it').textContent = data.status_it;
+            document.getElementById('tag-gamer').textContent = data.status_gamer;
+            
+            document.getElementById('edu-title').textContent = data.edu_title;
+            document.getElementById('lbl-college').textContent = data.lbl_college;
+            document.getElementById('lbl-city').textContent = data.lbl_city;
+            document.getElementById('lbl-direction').textContent = data.lbl_direction;
+            document.getElementById('lbl-course').textContent = data.lbl_course;
+            
+            document.getElementById('btn-gaming-txt').textContent = data.btn_gaming;
+            document.getElementById('btn-socials-txt').textContent = data.btn_socials;
+            document.getElementById('btn-contact-txt').textContent = data.btn_contact;
+            
+            document.getElementById('socials-title').textContent = data.socials_title;
+            
+            // Update "Play with me" text in game cards (select all instances)
+            // Note: In a real app, we might select all by class, but here is a simple example for the first one
+            // Ideally we iterate or use a specific class, but user requested structure.
+            document.getElementById('txt-play-pubg').textContent = data.play_with_me;
+        }
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            // Start with Home and UZ
+            navigate('home');
+            setLanguage('uz');
+        });
+    </script>
+</body>
+</html>
